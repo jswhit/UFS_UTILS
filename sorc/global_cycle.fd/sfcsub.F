@@ -8510,13 +8510,10 @@ cjfe
 !
 !  no matching ih found. search nearest hour
 !
-        if(ihr.eq.6) then
+        if(ihr.gt.0 .and. ihr.le.12) then
           ihr=0
           go to 50
-        elseif(ihr.eq.12) then
-          ihr=0
-          go to 50
-        elseif(ihr.eq.18) then
+        elseif(ihr.gt.12 .and. ihr.le.23) then
           ihr=12
           go to 50
         elseif(ihr.eq.0.or.ihr.eq.-1) then
